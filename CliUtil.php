@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class CliUtil
 {
@@ -6,17 +6,15 @@ class CliUtil
 
     public static function init()
     {
-        self::$handler = fopen ("php://stdin", "r");
+        self::$handler = fopen("php://stdin", "r");
     }
 
     public static function getFromCli($text)
     {
-        if(self::$handler === null) 
-        {
+        if (self::$handler === null) {
             self::init();
         }
         echo $text;
         return trim(fgets(self::$handler));
     }
-
 }
