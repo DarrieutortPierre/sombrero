@@ -15,33 +15,30 @@ include_once('Weapons/Sword.php');
 include_once('Gangster.php');
 include_once('GangsterManager.php');
 
-
+include_once('WeaponManager.php');
 
 $gangsters = ['a', 'b'];
-
 
 function fight(array &$gangsters, Weapon $weapon)
 {
     $weapon->shoot($gangsters);
 }
 
-
 fight($gangsters, WeaponFactory::getWeapon('Revolver'));
-
-var_dump($gangsters);
-
 
 $gangsters = [];
 $count = 0;
 
 while ($count < 2 || $count > 6) {
-    $count = Cliutil::getFromCli("How many gangsters are you? ");
+    $count = Cliutil::getFromCli('How many gangsters are you? ');
 }
 
 for ($i = 0; $i < $count; $i++) {
     $gangsters[] = gangsterManager::createGangsterFromCli();
 }
 
-$winner = Saloon::game($gangsters, new Weapon());
+$choosenWeapon = WeaponManager::chooseWeaponFromCli();
 
-echo "The winner is" . $winner->getName() . ' \n ';
+$winner = Saloon::game($gangsters, new $choosenWeapon());
+
+echo 'The winner is ' . $winner->getName() . '.';

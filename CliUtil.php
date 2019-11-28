@@ -6,7 +6,7 @@ class CliUtil
 
     public static function init()
     {
-        self::$handler = fopen("php://stdin", "r");
+        self::$handler = fopen('php://stdin', 'r');
     }
 
     public static function getFromCli($text)
