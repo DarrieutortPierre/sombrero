@@ -15,16 +15,16 @@ include_once('Weapons/Sword.php');
 include_once('Gangster.php');
 include_once('GangsterManager.php');
 
+include_once('dir.php');
+
 include_once('WeaponManager.php');
 
-$gangsters = ['a', 'b'];
+// function fight(array &$gangsters, Weapon $weapon)
+// {
+//     $weapon->shoot($gangsters);
+// }
 
-function fight(array &$gangsters, Weapon $weapon)
-{
-    $weapon->shoot($gangsters);
-}
-
-fight($gangsters, WeaponFactory::getWeapon('Revolver'));
+// fight($gangsters, WeaponFactory::getWeapon('Revolver'));
 
 $gangsters = [];
 $count = 0;
