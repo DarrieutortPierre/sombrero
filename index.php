@@ -1,23 +1,23 @@
 <?php
 
-include_once('CliUtil.php');
+require_once('CliUtil.php');
 
-include_once('Saloon.php');
+require_once('Saloon.php');
 
-include_once('WeaponFactory.php');
+require_once('WeaponFactory.php');
 
-include_once('Weapon.php');
+require_once('Weapon.php');
 
-include_once('Weapons/Gun.php');
-include_once('Weapons/Revolver.php');
-include_once('Weapons/Sword.php');
+require_once('Weapons/Gun.php');
+require_once('Weapons/Revolver.php');
+require_once('Weapons/Sword.php');
 
-include_once('Gangster.php');
-include_once('GangsterManager.php');
+require_once('Gangster.php');
+require_once('GangsterManager.php');
 
-include_once('dir.php');
+require_once('dir.php');
 
-include_once('WeaponManager.php');
+require_once('WeaponManager.php');
 
 echo "\e[91m \e[1m                                                      \n";
 echo "                       Welcome to                     \n";
