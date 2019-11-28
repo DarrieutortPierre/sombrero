@@ -1,35 +1,49 @@
 <?php 
 
+include_once('CliUtil.php');
+
 class saloon 
 {
-    public static function game($gangsters) 
+    public static function game(array $gangsters, Weapon $weapon) : Gangster
     {
         $saloonPositions = [];
-         $gun = new gun;
         while (count($gangsters) > 1){
-           $gun->setpos(count($gangsters));
-            $posperdante = $gun->getpos;
-            echo $posperdante;
-            die;
+            if(!$weapon->isMiss()){
+                $weapon->kill($gangsters);
+            }
         }
 
-
-        return $winner;
+        return $gangsters[0];
     }
 }
 
-class gun
+class WeaponFactory
 {
-    private $pos;
-    public function __construct() 
+    public function getWeapon($weaponName){
+        //return d'une arme avec le nom comme classe exemple return new Gun(3);
+        new $weaponName();
+    }
+}
+
+
+abstract class Weapon
+{
+    public $accuracy;
+    public $name;
+
+    public function __construct($name){
+        $this->accuracy = $accuracy;
+        $this->name = $name;
+    }
+
+    public function isMiss() : bool
     {
-        $this->pos = rand(1,6);
+        var_dump($this->accuracy);
+       return (bool) rand(0, $this->accuracy);
     }
-    public function getpos(){
-       return $this->pos;
-    }
-    public function setpos($nbgansta){
-        $this->pos = rand(1,(parseInt($nbgansta)+1));
+
+    public function kill(array &$gangsters){
+        unset($gangsters[array_rand($gangsters)]);
     }
 }
 
@@ -67,34 +81,13 @@ class Gangster
 }
 
 
-class CliUtil
-{
-    private static $handler;
-
-    public static function init()
-    {
-        self::$handler = fopen ("php://stdin", "r");
-    }
-
-    public static function getFromCli($text)
-    {
-        if(self::$handler === null) 
-        {
-            self::init();
-        }
-        echo $text;
-        return trim(fgets(self::$handler));
-    }
-
-}
-
 class GangsterManager 
 {
     public static function createGangsterFromCli()
     {
         $name = CliUtil::getFromCli("What is your name ?");
         
-        return new gangster($name);
+        return new Gangster($name);
     }
 }
 
@@ -111,8 +104,10 @@ for($i = 0; $i<$count; $i++)
     $gangsters[] = gangsterManager::createGangsterFromCli();
 }
 
-$winner = saloon::game($gangsters[0]['name']);
+$winner = saloon::game($gangsters, new Weapon());
 
 echo "The winner is".$winner->getName().' \n ';
 
 ?>
+
+
