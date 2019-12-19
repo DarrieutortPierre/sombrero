@@ -14,7 +14,9 @@ class Scandir
         foreach ($routes as $key => $filename) {
             $currentFN = preg_replace('/\.php$/', '', $filename);
             $filenames[] = $currentFN;
-            echo "[$key] => $currentFN \n";
+            echo "\n";
+            echo "︻╦̵̵̿╤─ ҉ - -- -- --\n";
+            echo "$key : $currentFN \n";
         }
         
         return $filenames;

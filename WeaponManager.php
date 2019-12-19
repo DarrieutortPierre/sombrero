@@ -3,10 +3,10 @@
 class WeaponManager
 {
     public static function chooseWeaponFromCli()
-    {        
-
+    {
         $files = Scandir::getDir();
 
-        return new $files[intval(CliUtil::getFromCli('Choose a weapon :'))];
+        echo "\n";
+        return new $files[intval(CliUtil::getFromCli("\e[1mChoose the weapon you want:\e[0m\n"))];
     }
 }
