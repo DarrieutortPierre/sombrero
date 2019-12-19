@@ -49,4 +49,37 @@ $choosenWeapon = WeaponManager::chooseWeaponFromCli();
 
 $winner = Saloon::game($gangsters, new $choosenWeapon());
 
-echo 'The winner is ' . $winner->getName() . '.';
+echo "\n";
+echo "_,.\n";
+echo ",''   `.     __....__ \n";
+echo ",'        >.-''        ``-.__,)\n";
+echo ",'      _,''           _____ _,'\n";
+echo "/      ,'           _.:':::_`:-._ \n";
+echo ":     ,'       _..-''  \`'.;.`-:::`:. \n";
+echo ";    /       ,'  ,::'  .\,'`.`. `\::)`  \n";
+echo "/    /      ,'        \   `. '  )  )/ \n";
+echo "/    /      /:`.     `--`'   \     '`\n";
+echo "`-._/      /::::)             )\n";
+echo "/      /,-.:(   , _   `.-' \n";
+echo ";      :(,`.`-' ',`.     ;\n";
+echo ":       |:\`' )      `-.._\ _\n";
+echo "|         `:-(             `)``-._ \n";
+echo "|           `.`.        /``'      ``:-.-__,\n";
+echo ":           / `:\ .     :            ` \`-\n";
+echo "\        ,'   '}  `.   |\n";
+echo "_..-`.    ,'`-.   }   |`-'    \n";
+echo ",'__    `-'' -.`.'._|   | \n";
+echo "```--..,.__.(_|.|   |::._\n";
+echo "__..','/ ,' :  `-.|::)_`.\n";
+echo "`..__..-'   |`.      __,' \n";
+echo "       :  `-._ `  ;\n";
+echo "        \ \   )  /\n";
+echo "        .\ `.   /\n";
+echo "         ::    /\n";
+echo "         :|  ,'\n";
+echo "         :;,'\n";
+echo "         `'\n";
+
+echo "\n";
+echo "\e[1mThe winner is " . $winner->getName() . ". \e[21m";
+echo "\n";

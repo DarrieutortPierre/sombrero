@@ -2,7 +2,7 @@
 
 class Gangster
 {
-    private $name;
+    public $name;
     private $alive;
 
     public function __construct($name)

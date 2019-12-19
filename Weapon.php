@@ -11,6 +11,15 @@ class Weapon
 
     public function shoot(array &$gangsters)
     {
-        unset($gangsters[array_rand($gangsters)]);
+        foreach ($gangsters as $key => $gangster) {
+            echo "\n";
+            echo 'PAN ! ' . $gangsters[$key] -> name . " is alive. \n";
+        }
+        $randShoot = array_rand($gangsters);
+        echo "\n";
+        echo '------------------------------';
+        echo "\n";
+        sleep(2);
+        unset($gangsters[$randShoot]);
     }
 }
