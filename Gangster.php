@@ -11,11 +11,6 @@ class Gangster
         $this->alive = true;
     }
 
-    public function isAttackedBy(gun $gun)
-    {
-        $this->alive = false;
-    }
-
     public function getName()
     {
         return $this->name;
