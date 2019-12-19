@@ -1,6 +1,6 @@
 <?php
 
-class Revolver extends Gun
+class Revolver extends Weapon
 {
     public $accuracy = 2;
 }

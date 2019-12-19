@@ -12,6 +12,8 @@ class Saloon
             }
         }
 
-        return $gangsters[0];
+        var_dump($gangsters);
+
+        return array_values($gangsters)[0];
     }
 }
